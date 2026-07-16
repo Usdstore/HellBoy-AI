@@ -1,0 +1,9 @@
+{
+  "Chrome": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "WSLUser": "hellboy",
+  "FCCPath": "~/fcc/nvidia-nim",
+  "MCPPath": "~/tradingview-mcp-jackson",
+  "ClaudeProject": "C:\\Users\\Admin\\Desktop\\Start-HellBoy-AI",
+  "ChromeCDPPort": 9222,
+  "FCCPort": 8082
+}
