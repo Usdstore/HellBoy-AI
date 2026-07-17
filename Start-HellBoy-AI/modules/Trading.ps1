@@ -1,12 +1,9 @@
-function Invoke-Trading {
+function Invoke-TradingAnalyze {
 
-    param(
-        [string]$Command
-    )
+    param([string]$Command)
 
-    Write-Host ""
-    Write-Host "Trading Module"
-    Write-Host "Received command:"
-    Write-Host $Command
+    $symbol = ($Command -replace "(?i)^analyze\s+","").Trim().ToUpper()
+
+    Analyze-Coin $symbol
 
 }

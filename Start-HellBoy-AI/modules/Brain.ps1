@@ -4,31 +4,34 @@ function Invoke-HellBoy {
         [string]$Command
     )
 
-    Write-Host ""
-    Write-Host "========================================="
-    Write-Host " HellBoy AI Brain"
-    Write-Host "========================================="
+    $intent = Get-HellBoyIntent $Command
 
-    switch -Regex ($Command) {
+    switch ($intent) {
 
-        "^analyze\s+" {
-            Invoke-Trading $Command
-            return
+        "Trading.Analyze" {
+            Invoke-TradingAnalyze $Command
         }
 
-        "^remember\s+" {
+        "Trading.Scan" {
+            Invoke-TradingScan
+        }
+
+        "Trading.Best" {
+            Invoke-TradingBest
+        }
+
+        "Memory.Save" {
             Save-Memory $Command
-            return
         }
 
-        "^status$" {
+        "System.Status" {
             Show-Dashboard
-            return
         }
 
         default {
-            Write-Host "I don't know how to do that yet."
+            Write-Host "I don't understand that command yet." -ForegroundColor Yellow
         }
+
     }
 
 }
